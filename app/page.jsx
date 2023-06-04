@@ -5,6 +5,9 @@ import { useState } from "react"
 import NavBar from "@/components/NavBar"
 import { getPublicKey, getBalance } from "@/services/wallet"
 import toast, { Toaster } from "react-hot-toast"
+import { AiTwotoneHeart } from "react-icons/ai";
+import { AiOutlineDropbox } from "react-icons/ai";
+
 
 export default function Home() {
   const [publicKey, setPublicKey] = useState(null)
@@ -66,12 +69,17 @@ export default function Home() {
               </h1>
               <div className='max-w-3xl mx-auto'>
                 <p
-                  className='text-xl text-gray-600 mb-8'
+                  className='text-xl text-gray-600 mb-8 px-7'
                   data-aos='zoom-y-out'
                   data-aos-delay='150'>
                   Impulsando el cambio, un proyecto a la vez: tu idea, nuestra comunidad,
                   posibilidades infinitas.
+                  
                 </p>
+                <div className="mb-10 flex justify-center">
+                  <AiTwotoneHeart />
+                </div>
+                
                 <div
                   className='max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center'
                   data-aos='zoom-y-out'
@@ -79,8 +87,8 @@ export default function Home() {
                   <div>
                     <a
                       className='p-2 px-6 rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4'
-                      href='#0'>
-                      Learn more
+                      href='#'>
+                      Learn more 
                     </a>
                   </div>
                 </div>
@@ -150,6 +158,7 @@ export default function Home() {
               <div class='space-y-0.5 font-medium text-left'>
                 <div>Roberta Casas</div>
                 <div class='text-sm font-light text-gray-500 '>Lead designer at Dropbox</div>
+                  
               </div>
             </figure>
             <figure class='flex flex-col justify-center items-center p-8 text-center bg-gray-50 border-b border-gray-200 lg:border-b-0 md:p-12 lg:border-r'>
