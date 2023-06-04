@@ -58,7 +58,7 @@ export default function Dashboard() {
             <h1
               className='text-5xl my-4 md:text-6xl font-extrabold max-w-[620px] leading-tighter tracking-tighter mb-4'
               data-aos='zoom-y-out'>
-              CrowdFunding descentralizado con{" "}
+              Empieza ahora mismo, descubre proyectos en{" "}
               <span className='bg-clip-text text-transparent bg-gradient-to-r from-green-500 to-teal-400'>
                 Aero
               </span>
@@ -66,7 +66,7 @@ export default function Dashboard() {
           </div>
 <div className='max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center' data-aos='zoom-y-out' data-aos-delay='300'>
   <div>
-    <a className='p-2 px-6 rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4' href=''>
+    <a className='p-2 px-6 rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4' href='/fund'>
       Ver proyectos
     </a>
     <a className='p-2 px-6 rounded-full text-white bg-gray-900 hover:bg-gray-800 w-full sm:w-auto sm:ml-4' href='/upload'>
