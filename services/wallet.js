@@ -6,8 +6,8 @@ import {
     LAMPORTS_PER_SOL,
     clusterApiUrl,
     SendTransactionError,
-} from "@solana/web3.js"
-
+} from "@solana/web3.js";
+import { HxroSDKClient } from '@hxronetwork/parimutuelsdk';
 const SOLANA_NETWORK = "devnet";
 
 export const getPublicKey = async () => {
@@ -123,5 +123,4 @@ export const sendTransaction = async (balance, amount, publicKey, receiver = "Gi
     }
     }
   }
-
   //nya

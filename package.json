@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hxronetwork/parimutuelsdk": "^1.0.25",
+    "@solana/wallet-adapter-react": "^0.15.32",
     "@solana/web3.js": "^1.77.3",
     "autoprefixer": "10.4.14",
     "next": "13.4.4",
