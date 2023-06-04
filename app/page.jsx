@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import NavBar from "@/components/NavBar"
 import { getPublicKey, getBalance } from "@/services/wallet"
+import toast, { Toaster } from "react-hot-toast"
 
 export default function Home() {
   const [publicKey, setPublicKey] = useState(null)
@@ -196,6 +197,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Toaster />
     </main>
   )
 }
