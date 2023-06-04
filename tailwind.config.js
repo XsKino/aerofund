@@ -23,7 +23,7 @@ module.exports = {
         neutral: {
           DEFAULT: "var(--neutral)",
         },
-        neutralAlt: {
+        "neutral-alt": {
           DEFAULT: "#var(--neutral-alt)",
         },
         foreground: {
@@ -38,8 +38,20 @@ module.exports = {
         danger: {
           DEFAULT: "var(--danger)",
         },
+
+        "white-alpha": {
+          DEFAULT: "var(--white-alpha)",
+          25: "var(--white-alpha-25)",
+          50: "var(--white-alpha-50)",
+          75: "var(--white-alpha-75)",
+        },
+        "black-alpha": {
+          DEFAULT: "var(--black-alpha)",
+          25: "var(--black-alpha-25)",
+          50: "var(--black-alpha-50)",
+          75: "var(--black-alpha-75)",
+        },
       },
     },
   },
-  plugins: [],
 }
