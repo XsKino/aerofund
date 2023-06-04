@@ -6,28 +6,7 @@ import { useState } from "react"
 import toast, { Toaster } from "react-hot-toast"
 import NavBar from "@/components/NavBar"
 
-export default function Home() {
-  const [publicKey, setPublicKey] = useState(null)
-  const [balance, setBalance] = useState(null)
-
-  const connectWallet = async () => {
-    let publicKeyTemp = await getPublicKey()
-    if (typeof publicKeyTemp !== "string") {
-      console.log(publicKeyTemp)
-      toast.error("Phantom Wallet not installed")
-      setTimeout(() => {
-        open("https://phantom.app/download", "_blank")
-      }, 1600)
-    }
-
-    let balanceTemp = await getBalance(publicKeyTemp)
-    setPublicKey(publicKeyTemp)
-    setBalance(balanceTemp)
-
-    localStorage.setItem("publicKey", publicKey)
-    location.replace("/dashboard")
-  }
-
+export default function Home({ connectWallet, publicKey, balance }) {
   return (
     <main className='w-full'>
       <NavBar connectWallet={connectWallet} />
@@ -199,4 +178,41 @@ export default function Home() {
       <Toaster />
     </main>
   )
+}
+
+export const getServerSideProps = async ctx => {
+  const [publicKey, setPublicKey] = useState(null)
+  const [balance, setBalance] = useState(null)
+
+  const connectWallet = async () => {
+    alert("connecting wallet")
+    let key = localStorage.getItem("publicKey")
+    if (!key) {
+      let publicKeyTemp = await getPublicKey()
+      if (typeof publicKeyTemp !== "string") {
+        console.log(publicKeyTemp)
+        toast.error("Phantom Wallet not installed")
+        setTimeout(() => {
+          open("https://phantom.app/download", "_blank")
+        }, 1600)
+      }
+    }
+    let balanceTemp
+    if (!publicKeyTemp) return
+    if (!balance) {
+      balanceTemp = await getBalance(publicKeyTemp)
+    }
+    setPublicKey(publicKeyTemp)
+    setBalance(balanceTemp)
+
+    localStorage.setItem("publicKey", publicKey)
+    location.replace("/dashboard")
+  }
+  return {
+    props: {
+      connectWallet,
+      publicKey,
+      balance,
+    },
+  }
 }
