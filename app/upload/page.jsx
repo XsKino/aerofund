@@ -71,7 +71,7 @@ export default function Upload() {
         </label>
         <br />
         <input
-          type='number'
+          type='date'
           name='minBetSize'
           id='minimum-bet-size-input'
           className='p-2 border border-gray-300 rounded'
