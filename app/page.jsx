@@ -18,16 +18,12 @@ export default function Home() {
       setTimeout(() => {
         open("https://phantom.app/download", "_blank")
       }, 1600)
+      return
     }
-    let balanceTemp
-    if (!publicKeyTemp) return
-    if (!balance) {
-      balanceTemp = await getBalance(publicKeyTemp)
-    }
+    let balanceTemp = await getBalance(publicKeyTemp)
     setPublicKey(publicKeyTemp)
     setBalance(balanceTemp)
 
-    localStorage.setItem("publicKey", publicKey)
     location.replace("/dashboard")
   }
 
